@@ -8,6 +8,8 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import YourListings from './containers/YourListings'
 import Listing from './components/Listing';
+import AllListings from './containers/AllListings'
+import PublicListing from './components/PublicListing';
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -70,7 +72,8 @@ const history=props.history
        <Route exact path="/login" render={routerProps => <Login {...routerProps} loginUser={LoginUser} />}/>
        <Route exact path="/listings" render={routerProps => <YourListings {...routerProps} user={user} loggedIn={loggedIn}/>}/>
        <Route exact path="/listings/:id"  component={Listing}/>
-     
+       <Route exact path="/listing/all"  component={AllListings}/>
+       <Route exact path="/listing/:id"  component={PublicListing}/>
      </Switch>
     </div>
   );

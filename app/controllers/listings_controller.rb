@@ -10,6 +10,11 @@ class ListingsController < ApplicationController
         render json: listings, include: :comments
     end
 
+    def showPublic
+        listing = Listing.find_by(id: params[:id])
+        render json: listing, include: :comments
+    end
+
 
     def index
         

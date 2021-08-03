@@ -51,6 +51,8 @@ const Listing = (props) => {
         setEditFormFlag(false)
     }
 
+// const commentsList = listing.comments.map( l => <li key={l.id}>{l.content}</li>)
+
     if (error ===''){
         return (
             <div>
@@ -60,13 +62,13 @@ const Listing = (props) => {
                         <p className='content'>Descriptions: {listing.description}</p>
                         <p>Price: {listing.price}</p>
                         <h4>Comments</h4>
-                        <p>{listing.comments}</p>
-                        {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <button className="submit-button" onClick={() => setEditFormFlag(true)}>Edit Listing</button>} 
-                        <button className="submit-button" onClick={deleteListing}> Delete Listing</button>
+                        {/* <p>{commentsList}</p> */}
+                        {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <button className="submit-button" onClick={() => setEditFormFlag(true)}>Edit</button>} 
+                        <button className="submit-button" onClick={deleteListing}> Delete</button>
                     </div>
                     :
                     <div>
-                        <h2>Listing Deleted ! </h2>
+                        <h2>Listing Deleted!</h2>
                     </div>
                 }
                 

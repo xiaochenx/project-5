@@ -8,12 +8,12 @@ const Navbar = (props) => {
                 <h1>Hello {props.user.username}</h1>
                 <button className="logout-button" onClick={props.logoutUser}>Logout</button>
                 <br/>
-                <Link to="/listings/all">
-                    <button className="submit-button">All listings</button>
+                <Link to="/listing/all">
+                    <button className="submit-button">Marketplace</button>
                 </Link>
                 <br />
                 <Link to="/listings">
-                    <button className="submit-button">Your listings</button>
+                    <button className="submit-button">Your items for sale</button>
                 </Link>
                 <hr/>
             </div>

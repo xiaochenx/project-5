@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get "/listings/all", to: "listings#indexAll"
 
+  get "/listing/:id", to: "listings#showPublic"
+
   resources :comments, only: [:index, :create]
 
   resources :listings do
