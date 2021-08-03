@@ -6,6 +6,8 @@ import Navbar from './containers/Navbar'
 import Home from './containers/Home';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import YourListings from './containers/YourListings'
+import Listing from './components/Listing';
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -66,6 +68,9 @@ const history=props.history
        <Route exact path="/" component={Home}/>
        <Route exact path="/signup" render={routerProps => <Signup {...routerProps} loginUser={LoginUser}/>}/>
        <Route exact path="/login" render={routerProps => <Login {...routerProps} loginUser={LoginUser} />}/>
+       <Route exact path="/listings" render={routerProps => <YourListings {...routerProps} user={user} loggedIn={loggedIn}/>}/>
+       <Route exact path="/listings/:id"  component={Listing}/>
+     
      </Switch>
     </div>
   );
