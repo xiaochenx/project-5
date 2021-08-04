@@ -61,6 +61,7 @@ const Listing = (props) => {
                         <h2 className='home'>Name: {listing.name}</h2>
                         <p className='content'>Descriptions: {listing.description}</p>
                         <p>Price: {listing.price}</p>
+                        <hr />
                         <h4>Comments</h4>
                         {/* <p>{commentsList}</p> */}
                         {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <button className="submit-button" onClick={() => setEditFormFlag(true)}>Edit</button>} 

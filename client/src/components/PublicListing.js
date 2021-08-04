@@ -27,8 +27,16 @@ const PublicListing = (props) => {
             <h2>Name: {listing.name}</h2>
             <p>Descriptions: {listing.description}</p>
             <p>Price: {listing.price}</p>
+            <hr />
             <h4>Comments</h4>
+
             {/* {commentsList} */}
+            
+            {/* <ul>
+                {listing.comments.map(item =>
+                    <li key={item}>{item.content}</li>
+                )}
+            </ul> */}
            
         </div>
         

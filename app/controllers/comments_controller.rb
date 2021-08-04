@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     def index
         listing = Listing.find_by(id: params[:listing_id])
         comments = listing.comments
-        render json: comments, include: :listing
+        render json: comments
     end
 
     def create
