@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import CommentForm from '../components/CommentForm'
 
 const Comments = (props) => {
     const [comments, setComments] = useState([])
     const [error, setError] = useState("")
+    const [commentFormFlag, setCommentFormFlag] = useState(false)
 
 
     useEffect(() => {
@@ -18,16 +20,89 @@ const Comments = (props) => {
         })
     }, [])
 
+    const addComment = (comment) =>{
+        fetch(`/listings/${props.match.params.id}/comments`,{
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(comment)
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.errors){
+                alert("Please fill out the form completely. There should be at least one character in each text box.");
+            }else{
+                setComments([...comments, data])
+                setCommentFormFlag(false)
+            }
+        })
+    }
+
 
     const commentsList = comments.map(c =><li key={c.id}>{c.content}</li>)
-    return(
-        <div>
-          
 
-            {commentsList}
-        </div>
-        
-    )
+    // if (error ===''){
+    //     return(
+    //         <div>
+    //           {comments.length > 0 ?
+    //           <div>
+    //               <h3 className='form-title'>Here are all the comments:</h3>
+    //                 {commentsList}
+    //                 {commentFormFlag ? 
+    //                 <CommentForm addListing ={addListing}/>
+    //                 :
+                   
+    //                 <button className="submit-button" onClick={() => setListingFormFlag(true) }>Add New Comment</button>
+    //             }
+    //             <hr/>
+    //         </div>
+    //         }
+    //         </div>
+            
+    //     )
+    // }else{
+    //     return(
+    //         <div>
+    //             <h3>Not authorized - Please Sign up or Login</h3>
+    //         </div>
+    //     )
+    // }
+    if (error ===''){
+        return (
+            <div>
+                {comments.length > 0 ?
+                    <div className="card">
+                        <h3 className='form-title'>Here are all your comments!</h3>
+                        {commentsList}
+                        {commentFormFlag ? 
+                            <CommentForm addComment ={addComment}/>
+                            :
+                            <button className="submit-button" onClick={() => setCommentFormFlag(true)}>Add New Comment</button>
+                        }
+                    </div>
+                    :
+                    <div>
+                        <h3>No Comments Found</h3>
+                        <h3>Click the button below to add</h3>
+                        {commentFormFlag ? 
+                            <CommentForm addComment ={addComment}/>
+                            :
+                            <button className="submit-button" onClick={() => setCommentFormFlag(true) }>Add New Comment</button>
+                        }
+                        <hr/>
+                    </div>
+                }
+            </div>
+        )
+    }else{
+        return(
+            <div>
+                <h3>Not authorized - Please Sign up or Login</h3>
+            </div>
+            
+        )
+    }
 
 }
 
