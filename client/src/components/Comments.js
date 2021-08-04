@@ -19,13 +19,12 @@ const Comments = (props) => {
     }, [])
 
 
+    const commentsList = comments.map(c =><li key={c.id}>{c.content}</li>)
     return(
         <div>
-           <ol>
-                {comments.map(c =>
-                    <li key={c.id}>{c.content}</li>
-                )}
-            </ol>
+          
+
+            {commentsList}
         </div>
         
     )
