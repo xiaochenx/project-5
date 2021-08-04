@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get "/listing/:id", to: "listings#showPublic"
 
-  resources :comments, only: [:index, :create]
+  # resources :comments, only: [:index, :create]
 
   resources :listings do
     resources :comments, only: [:show, :index, :create]
