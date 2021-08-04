@@ -55,7 +55,7 @@ const YourListings = () => {
                         {listingFormFlag ? 
                             <ListingForm addListing ={addListing}/>
                             :
-                            <button className="submit-button" onClick={() => setListingFormFlag(true)}>Add New Listing</button>
+                            <button className="submit-button" onClick={() => setListingFormFlag(true)}>Add New Item</button>
                         }
                     </div>
                     :
@@ -65,7 +65,7 @@ const YourListings = () => {
                         {listingFormFlag ? 
                             <ListingForm addListing ={addListing}/>
                             :
-                            <button className="submit-button" onClick={() => setListingFormFlag(true) }>Add New Listing</button>
+                            <button className="submit-button" onClick={() => setListingFormFlag(true) }>Add New Item</button>
                         }
                         <hr/>
                     </div>
