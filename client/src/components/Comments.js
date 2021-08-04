@@ -42,32 +42,7 @@ const Comments = (props) => {
 
     const commentsList = comments.map(c =><li key={c.id}>{c.content}</li>)
 
-    // if (error ===''){
-    //     return(
-    //         <div>
-    //           {comments.length > 0 ?
-    //           <div>
-    //               <h3 className='form-title'>Here are all the comments:</h3>
-    //                 {commentsList}
-    //                 {commentFormFlag ? 
-    //                 <CommentForm addListing ={addListing}/>
-    //                 :
-                   
-    //                 <button className="submit-button" onClick={() => setListingFormFlag(true) }>Add New Comment</button>
-    //             }
-    //             <hr/>
-    //         </div>
-    //         }
-    //         </div>
-            
-    //     )
-    // }else{
-    //     return(
-    //         <div>
-    //             <h3>Not authorized - Please Sign up or Login</h3>
-    //         </div>
-    //     )
-    // }
+ 
     if (error ===''){
         return (
             <div>
