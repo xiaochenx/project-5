@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import {  Link } from 'react-router-dom'
 
 const PublicListing = (props) => {
 
@@ -28,7 +28,11 @@ const PublicListing = (props) => {
             <p>Descriptions: {listing.description}</p>
             <p>Price: {listing.price}</p>
             <hr />
-            <h4>Comments</h4>
+            {/* <h4>Comments</h4> */}
+
+            <Link to={`/listings/${listing.id}/comments`}>
+                    <button className="submit-button">Show Comments</button>
+            </Link>
 
             {/* {commentsList} */}
             

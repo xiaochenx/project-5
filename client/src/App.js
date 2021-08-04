@@ -10,6 +10,8 @@ import YourListings from './containers/YourListings'
 import Listing from './components/Listing';
 import AllListings from './containers/AllListings'
 import PublicListing from './components/PublicListing';
+import Comments from './components/Comments';
+
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -74,6 +76,7 @@ const history=props.history
        <Route exact path="/listings/:id"  component={Listing}/>
        <Route exact path="/listing/all"  component={AllListings}/>
        <Route exact path="/listing/:id"  component={PublicListing}/>
+       <Route exact path="/listings/:id/comments"  component={Comments}/>
      </Switch>
     </div>
   );
