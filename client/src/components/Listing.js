@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import EditForm from './EditForm';
 import {  Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
 
 const Listing = (props) => {
 
@@ -64,12 +65,13 @@ const Listing = (props) => {
                         <p>Price: {listing.price}</p>
                        
                         {/* <p>{commentsList}</p> */}
-                        {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <button className="submit-button" onClick={() => setEditFormFlag(true)}>Edit</button>} 
-                        <button className="submit-button" onClick={deleteListing}> Delete</button>
+                        {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <Button circular size='small' color='teal' onClick={() => setEditFormFlag(true)}>Edit</Button>} 
+                        <Button circular color='red' size='small' icon='trash alternate' onClick={deleteListing}></Button>
                         <hr />
-                        <Link to={`/listings/${listing.id}/comments`}>
+                        {/* <Link to={`/listings/${listing.id}/comments`}>
                             <button className="submit-button">Show Comments</button>
-                        </Link>
+                        </Link> */}
+                        <Button primary size='big' as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>
                     </div>
                     :
                     <div>

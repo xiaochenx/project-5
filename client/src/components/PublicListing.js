@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {  Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
 
 const PublicListing = (props) => {
 
@@ -30,10 +31,10 @@ const PublicListing = (props) => {
             <hr />
             {/* <h4>Comments</h4> */}
 
-            <Link to={`/listings/${listing.id}/comments`}>
-                    <button className="submit-button">Show Comments</button>
-            </Link>
-
+            {/* <Link to={`/listings/${listing.id}/comments`}>
+            <Button primary>Show Comments</Button>
+            </Link> */}
+            <Button primary as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>
            
 
             {/* {commentsList} */}

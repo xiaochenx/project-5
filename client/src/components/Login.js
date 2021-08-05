@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from 'semantic-ui-react'
 
 const Login = ({loginUser}) => {
     const [username, setUserName] = useState("")
@@ -32,7 +33,7 @@ const Login = ({loginUser}) => {
                 <br/>
                 <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <br/>
-                <input className="submit-button" type="submit"/>
+                <Button  color='blue' size='small' type='submit'>Confirm</Button>
             </form>
         </div>
     )

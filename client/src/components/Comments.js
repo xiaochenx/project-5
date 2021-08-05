@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CommentForm from '../components/CommentForm'
+import { Button } from 'semantic-ui-react'
+
 
 const Comments = (props) => {
     const [comments, setComments] = useState([])
@@ -53,7 +55,7 @@ const Comments = (props) => {
                         {commentFormFlag ? 
                             <CommentForm addComment ={addComment}/>
                             :
-                            <button className="submit-button" onClick={() => setCommentFormFlag(true)}>Add New Comment</button>
+                            <Button size='large' color='blue' onClick={() => setCommentFormFlag(true)}>Add New Comment</Button>
                         }
                     </div>
                     :
@@ -63,7 +65,7 @@ const Comments = (props) => {
                         {commentFormFlag ? 
                             <CommentForm addComment ={addComment}/>
                             :
-                            <button className="submit-button" onClick={() => setCommentFormFlag(true) }>Add New Comment</button>
+                            <Button size='large' color='blue' onClick={() => setCommentFormFlag(true)}>Add New Comment</Button>
                         }
                         <hr/>
                     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from 'semantic-ui-react'
 
 const CommentForm = ({addComment}) => {
     const [content, setContent] = useState("")
@@ -20,7 +21,7 @@ const CommentForm = ({addComment}) => {
                 <br/>
                 <input type="text" id="content" value={content} onChange={(e) => setContent(e.target.value)}></input>
                 <br/>
-                <input className="submit-button" type="submit"/>
+                <Button color='blue' size='small' type='submit'>Submit</Button>
             </form>
         </div>
     )

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ListingLink from '../components/ListingLink';
 import ListingForm from '../components/ListingForm'
-
-
+import { Button } from 'semantic-ui-react'
 
 const YourListings = () => {
     const [listings, setListings] = useState([])
@@ -55,7 +54,7 @@ const YourListings = () => {
                         {listingFormFlag ? 
                             <ListingForm addListing ={addListing}/>
                             :
-                            <button className="submit-button" onClick={() => setListingFormFlag(true)}>Add New Item</button>
+                            <Button  color='teal' onClick={() => setListingFormFlag(true)}>Add New Item</Button>
                         }
                     </div>
                     :
@@ -65,7 +64,7 @@ const YourListings = () => {
                         {listingFormFlag ? 
                             <ListingForm addListing ={addListing}/>
                             :
-                            <button className="submit-button" onClick={() => setListingFormFlag(true) }>Add New Item</button>
+                            <Button color='teal' onClick={() => setListingFormFlag(true) }>Add New Item</Button>
                         }
                         <hr/>
                     </div>

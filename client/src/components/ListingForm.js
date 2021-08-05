@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Button } from 'semantic-ui-react'
 
 const ListingForm = ({addListing}) => {
     const [name, setName] = useState("")
@@ -34,7 +34,7 @@ const ListingForm = ({addListing}) => {
                 <input type="text" id="price" value={price} onChange={(e) => setPrice(e.target.value)}></input>
                 <br/>
                 <br/>
-                <input className="submit-button" type="submit"/>
+                <Button color='blue' size='small' type='submit'>Submit</Button>
             </form>
         </div>
     )
