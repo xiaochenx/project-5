@@ -2,18 +2,9 @@
 
 ## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
+Hello, welcome to Online Garage Sale. On this app, You can sign up to be a member and be able to and buy and sell anything, as long as it's legal of course. From a babay stroller to an old iphone or your car, literally you can sell anything!
 
-## Requirements
-
-- Ruby 2.7.4
-- NodeJS (v14 or higher), and npm
-- Heroku CLI
-- Postgresql
-
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
+Now, have fun exploring!
 
 ## Setup
 
@@ -34,8 +25,14 @@ You can use the following commands to run the application:
   [http://localhost:4000](http://localhost:4000)
 - `rails start`: run the frontend and backend together with one command
 
+## Requirements
+
+- Ruby 2.7.4
+- NodeJS (v14 or higher), and npm
+- Heroku CLI
+- Postgresql
+
 Make sure to also update this README to include documentation about
 your project. Here's a list of some [awesome readmes][] for inspiration.
 
 [awesome readmes]: https://github.com/matiassingers/awesome-readme
-# project-5
