@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import EditForm from './EditForm';
 import {  Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+import { Button, Icon, Segment, Header } from 'semantic-ui-react'
 
 const Listing = (props) => {
 
@@ -57,20 +57,21 @@ const Listing = (props) => {
 
     if (error ===''){
         return (
-            <div>
+            <Segment style={{ padding: '28em 5em' }} basic inverted>
                 {listing.id > 0 ?
                     <div>
-                        <h2 className='home'>Name: {listing.name}</h2>
-                        <p className='content'>Descriptions: {listing.description}</p>
-                        <p>Price: {listing.price}</p>
+                        {/* <h2 className='home'>Name: {listing.name}</h2> */}
+                        <Header  as='h3' inverted style={{ fontSize: '3em', marginTop:'-7em'}} textAlign='center' >Name: {listing.name}</Header>
+                        {/* <p className='content'>Descriptions: {listing.description}</p> */}
+                        <Header  as='h3' inverted style={{ fontSize: '3em', marginTop:'1em'}} textAlign='center' >Descriptions: {listing.description}</Header>
+                        
+                        <Header  as='h3' inverted style={{ fontSize: '2em', marginTop:'1em'}} textAlign='center' ><Icon name='dollar sign' />{listing.price}</Header>
                        
-                        {/* <p>{commentsList}</p> */}
-                        {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <Button circular size='small' color='teal' onClick={() => setEditFormFlag(true)}>Edit</Button>} 
-                        <Button circular color='red' size='small' icon='trash alternate' onClick={deleteListing}></Button>
+    
+                        {editFormFlag ? <EditForm editListing={editListing} listing={listing} /> : <Button circular size='large' textAlign='center' color='teal' onClick={() => setEditFormFlag(true)}>Edit</Button>} 
+                        <Button circular style={{ marginLeft: '1em', marginTop: '1em'}} color='red' size='large' icon='trash alternate' onClick={deleteListing}></Button>
                         <hr />
-                        {/* <Link to={`/listings/${listing.id}/comments`}>
-                            <button className="submit-button">Show Comments</button>
-                        </Link> */}
+                        
                         <Button primary size='big' as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>
                     </div>
                     :
@@ -79,7 +80,7 @@ const Listing = (props) => {
                     </div>
                 }
                 
-            </div>
+            </Segment>
         )
     }else{
         return(

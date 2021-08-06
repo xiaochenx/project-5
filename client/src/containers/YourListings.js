@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ListingLink from '../components/ListingLink';
 import ListingForm from '../components/ListingForm'
-import { Button } from 'semantic-ui-react'
+import { Segment, Header, Image, Button, Grid, Icon} from 'semantic-ui-react'
+
 
 const YourListings = () => {
     const [listings, setListings] = useState([])
@@ -46,15 +47,18 @@ const YourListings = () => {
 
     if (error ===''){
         return (
-            <div>
+            <Segment style={{ padding: '28em 5em' }} basic inverted>
                 {listings.length > 0 ?
                     <div className="card">
-                        <h3 className='form-title'>Here are all your listings. Just click to view!</h3>
+                        {/* <h3 className='form-title'>Here are all your listings. Just click to view!</h3> */}
+                        <Header  as='h3' inverted style={{ fontSize: '3em', marginTop:'-7em'}} textAlign='center' >Here are all your listings. Just click to view!</Header>
                         {listingsList}
                         {listingFormFlag ? 
                             <ListingForm addListing ={addListing}/>
                             :
-                            <Button  color='teal' onClick={() => setListingFormFlag(true)}>Add New Item</Button>
+                            <Button color='teal'  onClick={() => setListingFormFlag(true)}>Add New Item</Button>
+                            
+                            
                         }
                     </div>
                     :
@@ -64,12 +68,13 @@ const YourListings = () => {
                         {listingFormFlag ? 
                             <ListingForm addListing ={addListing}/>
                             :
-                            <Button color='teal' onClick={() => setListingFormFlag(true) }>Add New Item</Button>
+                            <Button color='teal' textAlign="center" onClick={() => setListingFormFlag(true) }>Add New Item</Button>
+                            
                         }
                         <hr/>
                     </div>
                 }
-            </div>
+            </Segment>
         )
     }else{
         return(

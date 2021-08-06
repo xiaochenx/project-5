@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {  Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+import { Button, Icon, Segment, Header } from 'semantic-ui-react'
 
 const PublicListing = (props) => {
 
@@ -23,14 +23,15 @@ const PublicListing = (props) => {
 
 
     return(
-        <div>
-            <h2>Name: {listing.name}</h2>
-            <p>Descriptions: {listing.description}</p>
-            <p>Price: {listing.price}</p>
-            <hr />   
-            <Button primary as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>      
+        <Segment style={{ padding: '28em 5em' }} basic inverted>
            
-        </div>
+            <Header  as='h3' inverted style={{ fontSize: '3em', marginTop:'-7em'}} textAlign='center' >Name: {listing.name}</Header>
+            <Header  as='h3' inverted style={{ fontSize: '3em', marginTop:'1em'}} textAlign='center' >Descriptions: {listing.description}</Header>
+            <Header  as='h3' inverted style={{ fontSize: '2em', marginTop:'1em'}} textAlign='center' ><Icon name='dollar sign' />{listing.price}</Header>
+            <hr />   
+            <Button primary size='big' as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>     
+           
+        </Segment>
         
     )
 }

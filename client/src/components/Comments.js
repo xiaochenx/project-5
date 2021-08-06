@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CommentForm from '../components/CommentForm'
-import { Button } from 'semantic-ui-react'
+
+import { Segment, Header, Image, Button, Grid, Icon, List} from 'semantic-ui-react'
 
 
 const Comments = (props) => {
@@ -42,15 +43,16 @@ const Comments = (props) => {
     }
 
 
-    const commentsList = comments.map(c =><li key={c.id}>{c.content}</li>)
+    const commentsList = comments.map(c =><List key={c.id} size='huge'><List.Item><List.Icon name='comment alternate' />{c.content}</List.Item></List>)
 
  
     if (error ===''){
         return (
-            <div>
+            <Segment style={{ padding: '28em 5em' }} basic inverted>
                 {comments.length > 0 ?
                     <div className="card">
-                        <h3 className='form-title'>Here are all your comments!</h3>
+                        
+                        <Header  as='h3' inverted style={{ fontSize: '3em', marginTop:'-7em'}} textAlign='center' >Here are all your comments!</Header>
                         {commentsList}
                         {commentFormFlag ? 
                             <CommentForm addComment ={addComment}/>
@@ -70,7 +72,7 @@ const Comments = (props) => {
                         <hr/>
                     </div>
                 }
-            </div>
+            </Segment>
         )
     }else{
         return(
