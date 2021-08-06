@@ -22,28 +22,13 @@ const PublicListing = (props) => {
     }, [])
 
 
-    // const commentsList = listing.comments.map( l => <li key={l.id}>{l.content}</li>)
     return(
         <div>
             <h2>Name: {listing.name}</h2>
             <p>Descriptions: {listing.description}</p>
             <p>Price: {listing.price}</p>
-            <hr />
-            {/* <h4>Comments</h4> */}
-
-            {/* <Link to={`/listings/${listing.id}/comments`}>
-            <Button primary>Show Comments</Button>
-            </Link> */}
-            <Button primary as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>
-           
-
-            {/* {commentsList} */}
-            
-            {/* <ul>
-                {listing.comments.map(item =>
-                    <li key={item}>{item.content}</li>
-                )}
-            </ul> */}
+            <hr />   
+            <Button primary as={Link} to={`/listings/${listing.id}/comments`}>Show Comments</Button>      
            
         </div>
         

@@ -11,6 +11,8 @@ import Listing from './components/Listing';
 import AllListings from './containers/AllListings'
 import PublicListing from './components/PublicListing';
 import Comments from './components/Comments';
+import GetStarted from './containers/GetStarted';
+
 
 
 function App(props) {
@@ -66,7 +68,7 @@ const history=props.history
 
 
   return (
-    <div className="App">
+    <div>
      <Navbar user={user} loggedIn={loggedIn} logoutUser={logoutUser} loginError={loginError}/> 
      <Switch>
        <Route exact path="/" component={Home}/>
@@ -77,7 +79,9 @@ const history=props.history
        <Route exact path="/listing/all"  component={AllListings}/>
        <Route exact path="/listing/:id"  component={PublicListing}/>
        <Route exact path="/listings/:id/comments"  component={Comments}/>
+       <Route exact path="/getstarted"  component={GetStarted}/>
      </Switch>
+     
     </div>
   );
 }

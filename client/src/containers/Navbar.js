@@ -1,6 +1,7 @@
 import React from 'react'
 import {  Link } from 'react-router-dom'
 import { Button, Icon } from 'semantic-ui-react'
+import "../Images/style.css"
 
 const Navbar = (props) => {
     if (props.loggedIn){
@@ -25,7 +26,7 @@ const Navbar = (props) => {
                 
                
                 <Button floated='left' animated='fade' primary as={Link} to="/listings">
-                    <Button.Content visible>Your items for sale</Button.Content>
+                    <Button.Content visible>Your items</Button.Content>
                     <Button.Content hidden>
                         <Icon name='dollar sign' />
                     </Button.Content>
@@ -35,11 +36,10 @@ const Navbar = (props) => {
         )
     } else{
         return (
-            <div>
-                <br/>
-
+            <div className='login_bar'>
+                
               
-                <Button floated='right' animated='fade' color='orange' as={Link} to="/signup">
+                <Button style={{ marginLeft: '1em', marginRight: '5em', marginTop: '2em' }} floated='right' animated='fade' color='orange' as={Link} to="/signup">
                     <Button.Content visible>Signup</Button.Content>
                         <Button.Content hidden>
                          <Icon name='signup' />
@@ -47,7 +47,7 @@ const Navbar = (props) => {
                 </Button>
                 
                 
-                <Button floated='right' animated='fade' color='blue' as={Link} to="/login">
+                <Button style={{ marginTop: '2em'}} floated='right' animated='fade' color='blue' as={Link} to="/login">
                 <Button.Content visible>Login</Button.Content>
                         <Button.Content hidden>
                             <Icon name='user' />
