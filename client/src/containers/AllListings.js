@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PublicListingLink from '../components/PublicListingLink';
+import { Segment, Header, Image, Button, Icon} from 'semantic-ui-react'
 
 
 const AllListings = () => {
@@ -25,10 +26,11 @@ const AllListings = () => {
 
 
     return(
-        <div>
-            <h3>Everything in the marketplace!</h3>
+        <Segment style={{ padding: '28em 5em' }} basic inverted>
+            {/* <h3>Everything in the marketplace!</h3> */}
+            <Header  as='h3' style={{ fontSize: '3em', marginTop:'-7em'}} textAlign='center' >Everything in the marketplace!</Header>
             {listingsList}
-        </div>
+        </Segment>
         
     )
 

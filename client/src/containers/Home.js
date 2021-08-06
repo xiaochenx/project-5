@@ -15,7 +15,7 @@ const Home = (props) => {
             <br />
             <Header  as='h1' style={{ fontSize: '2.6em'}} textAlign='right'>Online Garage Sale Marketplace!</Header>
             <br />
-            <Header  as='h2'  textAlign='right'>In here you can easily list, buy and sell anything that you don't need anymore!</Header>
+            <Header  as='h2'  textAlign='right'>In here, you can easily buy and sell anything that you don't need anymore!</Header>
             
             <Button primary as={Link} to={`/getstarted`} floated='right' style={{ marginTop: '2em'}} size='huge'>
                  Get Started
